@@ -196,8 +196,7 @@ minetest.register_abm({
                 if amount > 5 then amount = 5 end
                 local meta = minetest.get_meta(pos)
                 local inv = meta:get_inventory()
-                local stack = ItemStack("moontest:research_data")
-                stack:set_count(amount)
+                local stack = ItemStack("moontest:research_data "..tonumber(amount))
                 if inv:add_item("main", stack) then
                     minetest.sound_play('research', {
                         pos = pos,
